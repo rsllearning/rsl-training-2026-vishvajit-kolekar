@@ -1,10 +1,9 @@
 package com.example.subscriptionpricing;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.math.BigDecimal;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -162,6 +161,21 @@ class SubscriptionPricingServiceTest {
 
             assertEquals(new BigDecimal(expectedRate), result);
         }
+
+        @Test
+        @DisplayName("Rejects whitespace-padded voucher codes")
+        void rejectsWhitespacePaddedVoucher() {
+            assertThrows(InvalidVoucherException.class,
+                    () -> service.calculateMonthlyRate("BASIC", 0, " SAVE20 "));
+        }
+
+        @Test
+        @DisplayName("Applies the 25 percent discount at the maximum active month value")
+        void handlesMaximumActiveMonths() {
+            BigDecimal result = service.calculateMonthlyRate("PRO", Integer.MAX_VALUE, null);
+
+            assertEquals(new BigDecimal("112.50"), result);
+        }
     }
 
     @Nested
@@ -194,6 +208,27 @@ class SubscriptionPricingServiceTest {
         void rejectsNegativeActiveMonths() {
             assertThrows(IllegalArgumentException.class,
                     () -> service.calculateMonthlyRate("BASIC", -1, null));
+        }
+
+        @Test
+        @DisplayName("Rejects an empty tier")
+        void rejectsEmptyTier() {
+            assertThrows(IllegalArgumentException.class,
+                    () -> service.calculateMonthlyRate("", 0, null));
+        }
+
+        @Test
+        @DisplayName("Rejects the minimum integer active month value")
+        void rejectsMinimumActiveMonths() {
+            assertThrows(IllegalArgumentException.class,
+                    () -> service.calculateMonthlyRate("PRO", Integer.MIN_VALUE, null));
+        }
+
+        @Test
+        @DisplayName("Rejects invalid vouchers after the 25 percent discount")
+        void rejectsInvalidVoucherAfterPremiumDiscount() {
+            assertThrows(InvalidVoucherException.class,
+                    () -> service.calculateMonthlyRate("ENTERPRISE", 37, "EXPIRED"));
         }
     }
 }
