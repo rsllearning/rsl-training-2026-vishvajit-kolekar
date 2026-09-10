@@ -142,8 +142,8 @@ class SubscriptionPricingServiceTest {
     class EdgeCaseTests {
 
         @Test
-        @DisplayName("Keeps the result at zero when a voucher would make it negative")
-        void floorsFinalRateAtZero() {
+        @DisplayName("Keeps the lowest discounted rate non-negative after SAVE20")
+        void keepsLowestRateNonNegativeAfterSaveTwenty() {
             BigDecimal result = service.calculateMonthlyRate("BASIC", 37, "SAVE20");
 
             assertEquals(new BigDecimal("17.50"), result);
@@ -172,7 +172,9 @@ class SubscriptionPricingServiceTest {
         @CsvSource({
                 "EXPIRED",
                 "RANDOM",
-                "''"
+            "''",
+            "save20",
+            "halfprice"
         })
         @DisplayName("Rejects invalid voucher codes")
         void rejectsInvalidVoucherCodes(String voucherCode) {
