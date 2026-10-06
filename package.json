@@ -1,0 +1,13 @@
+{
+  "name": "organization-management",
+  "version": "1.0.0",
+  "description": "Organization Management System using TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
