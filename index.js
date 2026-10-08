@@ -31,7 +31,7 @@ async function fetchUser(userName) {
       console.log(`User with userName: ${userName} does not exists`);
     }
     const data = await userDetails.json();
-
+    console.log("User data of: ", userName);
     console.log(data);
   } catch {
     console.log("Due to Network or API failure fetchUser cal failed");
@@ -46,7 +46,6 @@ async function fetchUserRepos(userName) {
     },
   })
     .then((response) => {
-      console.log("Response from promise");
       if (!response.ok) {
         console.log("error");
         return;
@@ -58,7 +57,7 @@ async function fetchUserRepos(userName) {
         console.log("User has no public repositories.");
         return;
       }
-      console.log("Public repo data of user: ", userName);
+      console.log("User repo data of: ", userName);
       console.log(data);
     })
     .catch((error) => {
@@ -67,6 +66,8 @@ async function fetchUserRepos(userName) {
 }
 
 function fetchGithubData(userName) {
+  fetchUser(userName);
+  fetchUserRepos(userName);
   const githubFetcher = setInterval(() => {
     fetchUser(userName);
     fetchUserRepos(userName);
