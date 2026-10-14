@@ -1,0 +1,172 @@
+.appShell {
+  width: min(100% - 40px, 560px);
+  margin: 72px auto;
+}
+
+.appHeader {
+  margin-bottom: 32px;
+}
+.eyebrow {
+  color: #49745e;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.appHeader h1 {
+  margin: 8px 0;
+  font:
+    600 40px/1.1 Georgia,
+    serif;
+  color: #202b25;
+}
+.app-header > p:last-child {
+  color: #68746c;
+}
+
+.todoForm,
+.editForm {
+  display: flex;
+  gap: 8px;
+}
+.todoForm input,
+.editForm input {
+  flex: 1;
+  min-width: 0;
+}
+input,
+button {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid #d8dfd9;
+  border-radius: 5px;
+  font: inherit;
+}
+input {
+  background: #fff;
+  color: #202b25;
+}
+button {
+  background: #315f47;
+  border-color: #315f47;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background: #244a36;
+}
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #78a58a;
+  outline-offset: 2px;
+}
+
+.tasksSection {
+  margin-top: 36px;
+}
+.listHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #e3e8e4;
+  padding-bottom: 10px;
+}
+.listHeading h2 {
+  margin: 0;
+  font:
+    600 20px Georgia,
+    serif;
+  color: #202b25;
+}
+.listHeading span,
+.emptyState {
+  color: #68746c;
+  font-size: 14px;
+}
+.todoList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  border-bottom: 1px solid #e3e8e4;
+}
+.todoItem > input[type="checkbox"] {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  accent-color: #315f47;
+}
+.todoText {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.isComplete {
+  color: #87918a;
+  text-decoration: line-through;
+}
+.todoActions {
+  display: flex;
+  gap: 4px;
+}
+.todoActions button,
+.editForm button {
+  min-height: 34px;
+  padding: 0 8px;
+  font-size: 13px;
+}
+.todoActions button:last-child,
+.editForm button:last-child {
+  background: #fff;
+  color: #59655d;
+  border-color: #d8dfd9;
+}
+.editForm {
+  flex: 1;
+  padding: 8px 0;
+}
+.emptyState {
+  padding: 20px 0;
+}
+
+@media (max-width: 480px) {
+  .appShell {
+    margin: 44px auto;
+  }
+  .appHeader h1 {
+    font-size: 34px;
+  }
+  .todoItem {
+    gap: 8px;
+  }
+  .todoActions {
+    gap: 2px;
+  }
+}
+
+.filterButtons {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.filterButtons button {
+  flex: 1;
+  min-height: 34px;
+  padding: 0 8px;
+  font-size: 13px;
+  background: #813636;
+  border-color: #d8dfd9;
+  color: #fff;
+}
+
+.deleteButton {
+  background: silver;
+  color: rgb(15, 5, 5);
+  border-color: #cee1d1;
+}
