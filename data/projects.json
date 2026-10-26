@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "name": "E-Commerce Platform",
+    "description": "A full-stack e-commerce platform with payment integration and inventory management.",
+    "status": "active",
+    "team": ["Sameer Patil", "Rohit Sharma", "Aarav Mehta"],
+    "tasks": [
+      { "title": "Setup database schema", "status": "completed" },
+      { "title": "Build product listing API", "status": "completed" },
+      { "title": "Implement cart functionality", "status": "in-progress" },
+      { "title": "Add payment gateway", "status": "pending" }
+    ],
+    "activity": [
+      "Sameer pushed code to main branch",
+      "Ayush updated product listing page",
+      "Sachin fixed checkout bug",
+      "Kartik created initial wireframes"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "NextJs Dashboard",
+    "description": "An internal dashboard for monitoring application metrics and user analytics.",
+    "status": "active",
+    "team": ["Ranvir Kapoor", "Vikram Singh"],
+    "tasks": [
+      { "title": "Design dashboard layout", "status": "completed" },
+      { "title": "Integrate analytics API", "status": "in-progress" },
+      { "title": "Create chart components", "status": "pending" }
+    ],
+    "activity": [
+      "Ranvir pushed code to main branch",
+      "Vikram updated analytics API",
+      "Nisha created initial wireframes"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Mobile App Backend",
+    "description": "REST API backend for the company mobile application.",
+    "status": "completed",
+    "team": ["Raghav Kamble", "Ananya Singh", "Kunal Joshi"],
+    "tasks": [
+      { "title": "Setup Express server", "status": "completed" },
+      { "title": "Build authentication module", "status": "completed" },
+      { "title": "Create API documentation", "status": "completed" }
+    ],
+    "activity": [
+      "Raghav deployed final version",
+      "Ananya completed all tests",
+      "Kunal wrote API docs"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "HR Management System",
+    "description": "Employee management system with leave tracking and payroll features.",
+    "status": "active",
+    "team": ["Isha Verma", "Dev Murarka"],
+    "tasks": [
+      { "title": "Build employee directory", "status": "completed" },
+      { "title": "Add leave management", "status": "in-progress" },
+      { "title": "Implement payroll module", "status": "pending" }
+    ],
+    "activity": [
+      "Isha designed the employee portal",
+      "Dev integrated HR database"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Content Management System",
+    "description": "A CMS for managing blog posts, pages, and media content.",
+    "status": "completed",
+    "team": ["Pooja Shah", "Manav Desai"],
+    "tasks": [
+      { "title": "Setup CMS framework", "status": "completed" },
+      { "title": "Build content editor", "status": "completed" },
+      { "title": "Add media library", "status": "completed" }
+    ],
+    "activity": ["Pooja launched CMS v1.0", "Manav optimized media uploads"]
+  }
+]
