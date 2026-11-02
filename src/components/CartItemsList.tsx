@@ -1,17 +1,16 @@
-import { useCartStore } from "../store/cartStore";
-import { useShallow } from "zustand/react/shallow";
+import { CheckoutActor } from '../checkout/CheckoutActor';
+import { useCartStore } from '../store/cartStore';
 
 export function CartItemsList() {
-  const { items, removeItem } = useCartStore(
-    useShallow((s) => ({ items: s.items, removeItem: s.removeItem })),
-  );
+  const items = CheckoutActor.useSelector((snapshot) => snapshot.context.items);
+  const removeItem = useCartStore((state) => state.removeItem);
 
   return (
     <ul>
-      {items.map((i) => (
-        <li key={i.id}>
-          {i.name} × {i.quantity} — Rs.{i.price * i.quantity}
-          <button onClick={() => removeItem(i.id)}>Remove</button>
+      {items.map((item) => (
+        <li key={item.id}>
+          {item.name} × {item.quantity} — Rs.{item.price * item.quantity}
+          <button onClick={() => removeItem(item.id)}>Remove</button>
         </li>
       ))}
     </ul>
