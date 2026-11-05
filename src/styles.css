@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.pageShell {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.formHeader,
+.stepCount {
+  margin-bottom: 20px;
+}
+
+.stepList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+}
+
+.stepItem.active {
+  background: #eee;
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.formField {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formField input,
+.formField select,
+.formField textarea {
+  padding: 8px;
+}
+
+.formField input[aria-invalid="true"],
+.formField select[aria-invalid="true"],
+.formField textarea[aria-invalid="true"] {
+  border: 1px solid #b00020;
+}
+
+.fieldError {
+  margin: 0;
+  color: #b00020;
+}
+
+.checkboxField,
+.conditionalFields,
+.repeatList,
+.mockControl {
+  margin-top: 20px;
+}
+
+.checkboxControl,
+.radioOptions,
+.formActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.radioField {
+  margin-top: 20px;
+}
+
+.repeatList {
+  display: grid;
+  gap: 16px;
+}
+
+.repeatCard {
+  padding: 16px;
+}
+
+.repeatCard .fieldGrid {
+  margin-top: 12px;
+}
+
+.button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.formActions {
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.formMessage {
+  margin-top: 20px;
+}
+
+.formMessage.error {
+  color: #b00020;
+}
+
+.formMessage.success {
+  color: #17613a;
+}
+
+.reviewSummary section {
+  margin: 20px 0;
+}
+
+.reviewSummary dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 20px;
+}
+
+.reviewSummary dd {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .pageShell {
+    padding: 16px;
+  }
+
+  .fieldGrid,
+  .reviewSummary dl {
+    grid-template-columns: 1fr;
+  }
+}
