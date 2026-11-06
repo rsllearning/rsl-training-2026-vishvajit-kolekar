@@ -1,0 +1,6 @@
+Finding 1: location.hash - Untrusted URL Data
+Finding 2: innerHTML - DOM XSS
+Finding 3: localStorage - Untrusted Data
+Finding 4: Object.assign - Prototype Pollution
+Finding 5: getUser() - Sensitive Data Exposure
+Finding 6: renderClient() - Token Leakage
