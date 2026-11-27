@@ -1,0 +1,5 @@
+
+
+mongodump --db=company_advanced --archive=company_advanced.archive --gzip
+
+mongorestore --archive=company_advanced.archive --gzip --nsFrom="company_advanced.*" --nsTo="company_advanced_restore.*"
